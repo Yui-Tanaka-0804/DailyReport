@@ -7,6 +7,10 @@ import android.view.MenuItem
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
+import android.text.method.ScrollingMovementMethod
+import android.widget.TextView
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +32,9 @@ class MainActivity : AppCompatActivity() {
             val selectedRadioButton : RadioButton = findViewById(checkedId) // 選択中のラジオボタン
             teamNameSpinner.isClickable = ( selectedRadioButton == findViewById(R.id.teamButton) )
         }
+
+        val textView : TextView = findViewById(R.id.editText)
+        textView.movementMethod = ScrollingMovementMethod.getInstance()
 
 //        fun onCreateOptionsMenu(menu : Menu) : Boolean {
 //            menuInflater.inflate(R.menu.menu_writer, menu)

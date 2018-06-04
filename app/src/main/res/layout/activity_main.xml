@@ -113,6 +113,7 @@
             android:hint="本文を入力"
             android:inputType="textMultiLine"
             android:padding="8dp"
+            android:scrollbars="vertical"
             android:singleLine="false"
             android:textAlignment="textStart" />
 
