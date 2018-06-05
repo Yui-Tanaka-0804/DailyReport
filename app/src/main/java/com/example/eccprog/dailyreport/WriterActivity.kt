@@ -13,11 +13,11 @@ import android.widget.TextView
 
 
 
-class MainActivity : AppCompatActivity() {
+class WriterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_writer)
 
         val teamNameSpinner : Spinner = findViewById(R.id.teamNameSpinner)  // チーム名のトグルのやつ
         val radioGroup : RadioGroup = findViewById(R.id.teamGroup)  // ラジオボタン
