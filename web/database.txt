@@ -1,0 +1,45 @@
+create database if not exists proken;
+use proken;
+
+grant select, insert, update, delete on proken.* to ecc@localhost identified by '123qwEcc';
+
+create table if not exists user (
+	num int primary key auto_increment not null,
+	id varchar(32) not null,
+	name varchar(64) not null,
+	password varchar(256) not null
+);
+
+create table if not exists token (
+  num int primary key auto_increment not null,
+	userNum int not null,
+	token varchar(256) not null
+);
+
+create table if not exists team (
+	num int primary key auto_increment not null,
+	name varchar(64) not null
+);
+
+create table if not exists team_member (
+	teamNum int not null,
+	userNum int not null
+);
+
+create table if not exists report (
+	num int primary key auto_increment not null,
+	userNum int not null,
+	teamNum int,
+	main longtext,
+	date datetime,
+	latest datetime
+);
+
+create table if not exists comment (
+	num int primary key auto_increment not null,
+	reportNum int not null,
+	userNum int not null,
+	date datetime,
+	comment text
+);
+
