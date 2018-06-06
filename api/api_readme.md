@@ -42,8 +42,8 @@
 
 | value | detail |
 |---|---|
-| "true" | ログイン可能 |
-| "false" | ログイン不可 |
+| "true" | 成功 |
+| "false" | 失敗 |
 
 #### /api/getReport.php
 
