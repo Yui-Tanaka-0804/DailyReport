@@ -81,7 +81,7 @@ JSON形式で返される
 |---|---|
 | id | ユーザID |
 | password | パスワード |
-| date | 日付 |
+| date | 日付 yyyy-MM-dd |
 
 ##### 戻り値
 
@@ -107,7 +107,7 @@ JSON形式で返される
 |---|---|
 | id | ユーザID |
 | password | パスワード |
-| date | 日付 |
+| date | 日付 yyyy-MM |
 
 ##### 戻り値
 
