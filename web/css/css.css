@@ -1,0 +1,165 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+  background-color: #fafafa;
+  font-family: monospace;
+}
+
+#header {
+  min-width: 100%;
+	width: 1280px;
+	height: 30px;
+	padding: 4px;
+	font-size: 1.2em;
+  color: white;
+	background-color: #333333;
+}
+#header #appname{
+	width: 128px;
+	float: left;
+}
+#header #userid{
+	width: 128px;
+	float: right;
+}
+
+#header #logout{
+  width: 96px;
+  float: right;
+  cursor: pointer;
+}
+
+#header #newReportButton, #header #newTeamButton{
+  width: 150px;
+  float: right;
+  cursor: pointer;
+}
+
+#header #newReportButton:hover, #header #newTeamButton:hover, #header #logout:hover{
+  color: black;
+  background-color: #eaeaea;
+}
+
+#main{
+	width: 1280px;
+	height: calc(100vh - 50px);
+}
+
+#calendar{
+	width: 300px;
+	height: calc(100vh - 50px);
+	float: left;
+	border-left: 20px solid gray;
+	overflow: hidden;
+}
+
+#calendar_title{
+  width: 100%;
+}
+#calendar .li{
+	width: 36px;
+	height: 36px;
+	margin: 1px;
+
+	border: 1px solid black;
+	border-radius: 2px;
+	float: left;
+  cursor: pointer;
+
+}
+
+#calendar .header{
+	width: 36px;
+  height: 18px;
+	margin: 1px;
+
+	border: 1px solid black;
+	border-radius: 2px;
+	float: left;
+  text-align: center;
+}
+
+#calendar .li:hover{
+  background-color: #eaeaea;
+}
+#list {
+	width: 300px;
+	height: calc(100vh - 50px);
+	overflow-y: scroll;
+	display: block;
+	border-left: 20px solid gray;
+	float: left;
+}
+
+#list ul li{
+	width: 100%;
+	height: 32px;
+	padding-top: 16px;
+	border-bottom: 1px solid gray;
+  border-left: 10px solid lightgreen;
+  list-style-type: none;
+}
+
+#list ul a li:hover{
+  background-color: #eaeaea;
+}
+#report,#newreport {
+	width: 570px;
+	height: calc(100vh - 50px);
+	float: left;
+	border-left: 20px solid gray;
+	overflow-y: scroll;
+}
+
+#report_title{
+  width: 100%;
+  height: auto;
+  font-size: 1.5em;
+  font-weight: 100;
+
+  margin-top: 4px;
+  border-bottom: 1px solid black;
+}
+
+#report_dates{
+  width: 100%;
+  height: auto;
+
+  border-bottom: 1px solid black;
+
+}
+
+#report_make_date, #report_latest_date{
+  margin-top: 4px;
+  border-left: 4px solid orange;
+}
+
+#report #report_main{
+  margin: 4px 4px 0 4px;
+  word-wrap: break-word;
+}
+
+#newreport{
+	display: none;
+}
+
+#newreport_main{
+	width: calc(100% - 4px);
+	height: 80vh;
+  margin: 2px;
+  border-top: 1px solid gray;
+  overflow-y: scroll;
+  background-color: white;
+  display: block;
+}
+
+#newreportsubmit{
+  width: 100%;
+  height: auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  display:block;
+}

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/grayColor"
+tools:context=".CalenderActivity">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="2"
+    android:background="@color/whiteColor">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Month"
+        android:textSize="20sp"
+        tools:layout_constraintTop_creator="1" tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent" android:layout_marginTop="17dp"
+        tools:layout_constraintLeft_creator="1" app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/prevButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/Prev"
+        android:background="@color/colorAccent"
+        tools:layout_constraintBottom_creator="1" android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent" tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="2dp" app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/Next"
+        android:background="@color/colorAccent"
+        tools:layout_constraintRight_creator="1" tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="13dp"
+        app:layout_constraintRight_toRightOf="parent" android:layout_marginBottom="2dp"/>
+</android.support.constraint.ConstraintLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Sun"
+        android:background="@color/whiteColor"
+        android:textColor="@color/redColor"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/whiteColor"
+        android:text="@string/Mon"
+        android:textColor="@color/blackColor"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Tue"
+        android:textColor="@color/blackColor"
+        android:background="@color/whiteColor"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Wed"
+        android:textColor="@color/blackColor"
+        android:background="@color/whiteColor"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Thu"
+        android:textColor="@color/blackColor"
+        android:background="@color/whiteColor"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Fri"
+        android:textColor="@color/blackColor"
+        android:background="@color/whiteColor"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:text="@string/Sat"
+        android:textColor="@color/blueColor"
+        android:background="@color/whiteColor"/>
+
+</LinearLayout>
+
+<GridView
+    android:id="@+id/calendarGridView"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="15"
+    android:horizontalSpacing="1dp"
+    android:layout_marginLeft="1dp"
+    android:numColumns="7"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="1dp">
+</GridView>
+
+</LinearLayout>
