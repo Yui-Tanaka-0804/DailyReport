@@ -26,4 +26,7 @@
     <string name="Fri">Fri</string>
     <string name="Sat">Sat</string>
     <string name="Month"></string>
+
+    <!--menu_add_report用-->
+    <string name="action_settings">Settings</string>
 </resources>
