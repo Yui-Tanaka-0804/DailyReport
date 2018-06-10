@@ -1,5 +1,5 @@
 <?php
-require_once("../web/Nippou/Login.php");
+require_once("../Nippou/Login.php");
 
 function h($s){
 	return htmlspecialchars($s);

@@ -1,5 +1,5 @@
 <?php
-require_once("../web/Nippou/Report.php");
+require_once("../Nippou/Report.php");
 require_once("../web/Nippou/Login.php");
 
 function h($s){

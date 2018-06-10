@@ -1,5 +1,5 @@
 <?php
-require_once("../web/Nippou/Register.php");
+require_once("../Nippou/Register.php");
 
 function h($s){
 	return htmlspecialchars($s);
