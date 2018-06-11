@@ -2,7 +2,7 @@
 
 class Team{
 
-	function getName($num){
+	public static function getName($num){
     $team = "";
 
     if($team == ""){
@@ -12,7 +12,7 @@ class Team{
 		return $team;
 	}
 
-	function getNum($name){
+	public static function getNum($name){
 		return 0;
 	}
 }

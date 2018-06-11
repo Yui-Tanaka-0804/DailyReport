@@ -6,7 +6,7 @@ class Login{
 	private $id;
 	private $pass;
 
-	private function h($s){
+	private static function h($s){
 		return htmlspecialchars($s);
 	}
 

@@ -4,7 +4,7 @@ require_once("App.php");
 class User{
 
   // userNumからIdを取得
-	function getId($num){
+	public static function getId($num){
 		try{
 			$pdo = App::DB();
 			$res = $pdo->prepare("select id from user where num=:num");
@@ -20,7 +20,7 @@ class User{
 	}
 
   // IdからuserNumを取得
-	function getNum($id){
+	public static function getNum($id){
 		try{
 			$pdo = App::DB();
 			$res = $pdo->prepare("select num from user where id=:id");
@@ -36,7 +36,7 @@ class User{
 	}
 
   // 引数で渡されたユーザーが存在するか
-	function userExists($id){
+	public static function userExists($id){
 		try{
 			$pdo = App::DB();
 			$res = $pdo->prepare("select count(*) from user where id=:id");
