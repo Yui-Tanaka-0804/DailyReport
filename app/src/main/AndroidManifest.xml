@@ -14,16 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".WriterActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
-            <!--この下の intent-filter を移動させれば最初の起動画面を変更できる-->
+        <activity android:name=".WriterActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <!--この下の intent-filter を移動させれば最初の起動画面を変更できる-->
+
         </activity>
         <activity android:name=".CalenderActivity" />
         <activity android:name=".AddReportActivity" />
