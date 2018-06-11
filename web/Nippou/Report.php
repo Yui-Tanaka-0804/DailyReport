@@ -6,7 +6,7 @@ require_once("Team.php");
 class Report{
 
   // 日報リストの取得(JSON)
-	function getReportList($d){
+	public static function getReportList($d){
     $d1 = $d." 00:00:00";
     $d2 = $d." 23:59:59";
 		try{
@@ -40,7 +40,7 @@ class Report{
 	}
 
   // 引数で渡された日報番号の日報を取得(JSON)
-	function getReport($num){
+	public static function getReport($num){
 		try{
 			$pdo = App::DB();
 			$res = $pdo->prepare("select * from report where num=:num");
@@ -62,7 +62,7 @@ class Report{
 	}
 
   // １日の日報の数を１ヶ月分取得
-  function getReportNumAll($ym){
+  public static function getReportNumAll($ym){
     $arry = array();
     for($i = 1; $i <= 31; $i++){
       $a = Report::getReportNum($ym."-".$i);
@@ -73,7 +73,7 @@ class Report{
   }
 
   // 引数で渡された日付の日報の数を取得
-  function getReportNum($d){
+  public static function getReportNum($d){
     $num = 0;
     $d1 = $d." 00:00:00";
     $d2 = $d." 23:59:59";
@@ -97,7 +97,7 @@ class Report{
   // 日報を作成する
   // 作成に成功した場合 日報番号
   //      失敗した場合 -1
-	function newReport($writer, $team, $main){
+	public static function newReport($writer, $team, $main){
 		$userNum = User::getNum($writer);
 		$teamNum = Team::getNum($team);
     $num = -2;
@@ -127,7 +127,7 @@ class Report{
   // 日報を削除する
   // 削除が成功した場合true
   //      失敗した場合false
-  function deleteReport($num, $writer){
+  public static function deleteReport($num, $writer){
     $userNum = User::getNum($writer);
     try{
       $pdo = App::DB();
@@ -158,7 +158,7 @@ class Report{
   // 日報を更新する
   // 更新が成功した場合true
   //      失敗した場合false
-  function rewriteReport($num, $writer, $main){
+  public static function rewriteReport($num, $writer, $main){
     $userNum = User::getNum($writer);
 
     try{

@@ -9,7 +9,7 @@ class Register{
 	private $name;
 	private $passhash;
 
-	private function h($s){
+  private static function h($s){
 		return htmlspecialchars($s);
 	}
 

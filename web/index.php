@@ -13,13 +13,13 @@ if(!isset($_SESSION['id']) || $_SESSION['id'] == ""){
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/css.css" type="text/css">
-	<title><?php echo App::APP_NAME; ?></title>
+	<title><?php echo App::$APP_NAME; ?></title>
 </head>
 <body>
 
 <div id="header">
 	<div id="appname">
-		<?php echo App::APP_NAME; ?>
+		<?php echo App::$APP_NAME; ?>
 	</div>
 
   <div id="userid">

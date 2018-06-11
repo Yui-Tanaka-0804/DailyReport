@@ -11,6 +11,6 @@ class Password{
 	function getPassHash(){
 		return hash(
 			"sha256", 
-			App::PASS_B_SALT . $this->password . App::PASS_A_SALT);
+			App::$PASS_B_SALT . $this->password . App::$PASS_A_SALT);
 	}
 }
