@@ -8,8 +8,8 @@
     tools:context=".AddReportActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/theme_main_Green"
+            android:theme="@style/Theme.AppCompat.Light"
             app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light" />
 
     </android.support.design.widget.AppBarLayout>

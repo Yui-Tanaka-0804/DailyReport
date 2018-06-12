@@ -12,6 +12,9 @@ package com.example.eccprog.dailyreport;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -27,8 +30,11 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
@@ -37,6 +43,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +82,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -307,6 +317,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mEmail;
         private final String mPassword;
+        private String mUserName;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -332,9 +343,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // ここをログイン用のAPIに置き換える
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                if (pieces[0].equals(mEmail) || pieces[1].equals(mPassword)) {
+
+                    // ここら辺にユーザ名取得のAPIを入れる
+                    mUserName = "testUser";
+
+                    return true;
                 }
             }
 
@@ -348,12 +362,28 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
          */
         @Override
         protected void onPostExecute(final Boolean success) {
+
             mAuthTask = null;
             showProgress(false);
 
             if (success) {
                 // こっこに成功したときの処理書くにゃで
+
+                // ID・パスワード・ユーザー名の保存
+                SharedPreferences userStatus = getSharedPreferences("UserStatus", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = userStatus.edit();
+                editor.putString("id", mEmail);
+                editor.putString("password", mPassword);
+                editor.putString("username", mUserName);
+                editor.apply();
+
+                // 次の画面の起動
+                Intent intent = new Intent(LoginActivity.this, CalenderActivity.class);
+                startActivity(intent);
+
+                // この画面を終了させる
                 finish();
+
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
@@ -365,6 +395,29 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_add_report, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Toast.makeText(this, "この後の処理は未実装です", Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 

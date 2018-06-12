@@ -34,8 +34,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.android.support:design:26.1.0'
     // API(Json形式)の送受信用
-    implementation 'org.apache.httpcomponents:httpclient:4.3.5'
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 }

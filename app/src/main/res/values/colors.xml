@@ -13,4 +13,5 @@
     <color name="redColor">#F00</color>
     <color name="whiteColor">#FFF</color>
     <color name="blackColor">#000</color>
+    <color name="theme_main_PaleGray">#f2e9e1</color>
 </resources>
